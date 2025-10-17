@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { PhoneInput } from './components/PhoneInput';
 import { LoginButton } from './components/LoginButton';
-import { ToggleSwitch } from './components/ToggleSwitch';
 import { OnboardingScreen } from './components/OnboardingScreen';
 import { Dashboard } from './components/Dashboard';
 import { ChatScreen } from './components/ChatScreen';
@@ -185,13 +184,6 @@ function App() {
                 darkMode={darkMode}
               />
             </div>
-
-            {/* Input Mode Toggle */}
-            <ToggleSwitch
-              isVoiceMode={isVoiceMode}
-              onToggle={() => setIsVoiceMode(!isVoiceMode)}
-              darkMode={darkMode}
-            />
           </div>
         </div>
 
