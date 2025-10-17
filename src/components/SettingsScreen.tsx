@@ -15,7 +15,7 @@ export function SettingsScreen({ userName, onBack, onLogout, darkMode, onToggleD
   const [notifications, setNotifications] = useState(true);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
-  const suser = useTranslation('Sahayak User', language);
+  const suser = useTranslation('e-Sarthi User', language);
   const settingsTitle = useTranslation('Settings', language);
   const accountTitle = useTranslation('Account', language);
   const signOutText = useTranslation('Sign Out', language);
@@ -31,7 +31,7 @@ export function SettingsScreen({ userName, onBack, onLogout, darkMode, onToggleD
   const twoFactorDesc = useTranslation('Add extra security to your account', language);
   const supportTitle = useTranslation('Support', language);
   const helpLabel = useTranslation('Help & Support', language);
-  const helpDesc = useTranslation('Get help with using Sahayak', language);
+  const helpDesc = useTranslation('Get help with using e-Sarthi', language);
   const logoutlabel = useTranslation('Sign Out', language);
   const logoutdesc = useTranslation('Are you sure you want to sign out of your account?', language);
   const cancelbutton = useTranslation('Cancel', language);

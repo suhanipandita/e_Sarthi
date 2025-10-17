@@ -117,7 +117,7 @@ function App() {
   }
 
   if (appState === 'chat' && userData) {
-    return <ChatScreen userName={userData.name} onBack={handleBackToDashboard} />;
+    return <ChatScreen userName={userData.name} onBack={handleBackToDashboard} language={language} />;
   }
 
   if (appState === 'profile' && userData) {
@@ -161,7 +161,7 @@ function App() {
                 Welcome to
               </h1>
               <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Sahayak
+                e-Sarthi
               </h2>
             </div>
 

@@ -72,7 +72,7 @@ export function ChatScreen({ userName, onBack, language }: ChatScreenProps) {
           <iframe
             src="https://cdn.botpress.cloud/webchat/v3.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/09/11/18/20250911184233-SPSNT4DV.json"
             className="w-full h-full border-0"
-            title="Sahayak Chat Bot"
+            title="e-Sarthi Chat Bot"
             allow="microphone"
           />
         </div>

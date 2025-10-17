@@ -18,7 +18,7 @@ export function Dashboard({ userName, onStartChat, onNavigateToProfile, onNaviga
   const [showPopup, setShowPopup] = useState(false); // State for the popup
   const languages = ['English', 'हिंदी', 'বাংলা', 'தமிழ்', 'తెలుగు', 'ગુજરાતી', 'ಕನ್ನಡ', 'മലയാളം'];
   
-  const appname = useTranslation('Sahayak', language);
+  const appname = useTranslation('e-Sarthi', language);
   const welcomeText = useTranslation('Welcome', language);
   const assistantText = useTranslation('Your AI-powered government services assistant', language);
   const startConversationText = useTranslation('Start Conversation', language);
