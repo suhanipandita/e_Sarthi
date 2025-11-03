@@ -47,9 +47,15 @@ export function Dashboard({ userName, onStartChat, onNavigateToProfile, onNaviga
   };
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900' : 'bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50'} relative overflow-hidden`}>
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`absolute top-0 right-0 w-96 h-96 ${darkMode ? 'bg-blue-500/5' : 'bg-blue-200/20'} rounded-full blur-3xl`}></div>
+        <div className={`absolute bottom-0 left-0 w-96 h-96 ${darkMode ? 'bg-teal-500/5' : 'bg-teal-200/20'} rounded-full blur-3xl`}></div>
+      </div>
+
       {/* Header */}
-      <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm border-b`}>
+      <div className={`${darkMode ? 'bg-gray-800/80 border-gray-700/50 backdrop-blur-xl' : 'bg-white/80 border-gray-200/50 backdrop-blur-xl'} shadow-sm border-b sticky top-0 z-50`}>
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{appname}</h1>
@@ -139,23 +145,28 @@ export function Dashboard({ userName, onStartChat, onNavigateToProfile, onNaviga
             </p>
 
             {/* Primary Chat Button */}
-            <div
+            <button
               onClick={onStartChat}
-              className={`inline-flex items-center space-x-4 px-8 py-6 rounded-2xl cursor-pointer transition-all duration-200 transform hover:scale-105 ${darkMode
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl'
-                  : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-xl'
-                }`}
+              className="relative group inline-flex items-center space-x-4 px-10 py-7 rounded-2xl cursor-pointer transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-500 hover:to-teal-500 text-white shadow-2xl hover:shadow-3xl overflow-hidden"
             >
-              <MessageCircle className="w-8 h-8" />
-              <div className="text-left">
-                <h3 className="text-xl font-semibold">{startConversationText}</h3>
-                <p className="text-sm opacity-90">{helpText}</p>
+              <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <div className="relative z-10 flex items-center space-x-4">
+                <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                  <MessageCircle className="w-7 h-7" />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-xl font-bold mb-1">{startConversationText}</h3>
+                  <p className="text-sm opacity-90">{helpText}</p>
+                </div>
+                <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </div>
-            </div>
+            </button>
           </div>
 
           {/* Quick Actions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} rounded-xl shadow-sm border p-6`}>
               <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{services}</h3>
               <div className="space-y-3">
@@ -203,7 +214,7 @@ export function Dashboard({ userName, onStartChat, onNavigateToProfile, onNaviga
           </div>
 
           {/* Help Section */}
-          <div className={`mt-8 text-center p-6 rounded-xl ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-blue-50 border-blue-200'} border`}>
+          <div className={`mt-8 text-center p-8 rounded-2xl ${darkMode ? 'bg-gradient-to-br from-gray-800/90 to-gray-800/70 border-gray-700/50 backdrop-blur-sm' : 'bg-gradient-to-br from-blue-50 to-teal-50 border-blue-200/50 backdrop-blur-sm'} border shadow-lg relative z-10`}>
             <h3 className={`text-lg font-semibold mb-2 ${darkMode ? 'text-white' : 'text-blue-900'}`}>
               {help}
             </h3>

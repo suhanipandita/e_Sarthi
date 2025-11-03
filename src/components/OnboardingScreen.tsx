@@ -43,9 +43,15 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-sm mx-auto">
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="w-full max-w-md mx-auto relative z-10">
+        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
           <div className="px-8 py-12">
             {/* Progress Bar */}
             <ProgressBar currentStep={getCurrentStep()} totalSteps={10} />
@@ -94,8 +100,9 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
               />
             ) : (
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-8 h-8 border-2 border-gray-900 border-t-transparent rounded-full animate-spin mb-4"></div>
-                <p className="text-gray-600">Setting up your profile...</p>
+                <div className="inline-flex items-center justify-center w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
+                <p className="text-gray-700 font-medium">Setting up your profile...</p>
+                <p className="text-sm text-gray-500 mt-2">This will only take a moment</p>
               </div>
             )}
           </div>
